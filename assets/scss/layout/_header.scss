@@ -1,0 +1,40 @@
+@use "../foundation/mixin" as mixin;
+@use "../foundation/variables" as var;
+
+.l-header {
+  height: 109px;
+
+  &__inner {
+    max-width: 1000px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    list-style: none;
+    margin-right: 27px;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+
+  // ヘッダー部分のアンカータグ要素は個別に定義
+  &__link {
+    text-decoration: none;
+    line-height: 2;
+    padding: 0 0 0 20px;
+    background: url(../img/_sample/small_apple.jpg) no-repeat left center;
+    display: inline-block;
+    color: #514327;
+    font-size: 16px;
+  }
+}

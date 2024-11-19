@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/*引数：初期値はすべて_variables.scssで設定
+$pcsize：PCデザイン文字サイズ
+$pcspacing：PCデザイン文字間
+$spsize：SPデザイン文字サイズ
+$spspacing：SPデザイン文字間
+$pccontainer：PCデザインコンテンツ幅
+$spcontainer：SPデザインコンテンツ幅
+*/
+/*引数
+$property：cssのプロパティ
+$pcsize：PCデザインpx
+$spsize：SPデザインpx
+$pccontainer：PCデザインコンテンツ幅：初期値は_variables.scssで設定
+$spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで設定
+*/
+/*引数
+$vertical：横比率
+$horizontal：縦比率
+*/
+/*引数
+$col：PCカラム数
+$margin_h：PC横マージンpx
+$margin_v：PC縦マージンpx
+$spcol：SPカラム数
+$spmargin_h：SP横マージンpx
+$spmargin_v：SP縦マージンpx
+$pccontainer：PCデザインコンテンツ幅：初期値は_variables.scssで設定
+$spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで設定
+*/
+.p-fv__innerwrap {
+  position: relative;
+  margin-right: 35px;
+  margin-left: 35px;
+  overflow: hidden;
+}
+
+.carousel .slides {
+  display: flex;
+  justify-content: space-around;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel .slides .slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  height: 596px;
+  background-image: url(../img/_sample/fv.jpg);
+  background-size: cover; /* 画像を要素全体にフィットさせる */
+  background-position: center;
+  border-radius: 30px;
+}
+@media (max-width: 670px) {
+  .carousel .slides .slide {
+    background-position: -330px;
+    border-radius: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .carousel .slides .slide {
+    background-image: url(../img/_sample/fv_sp.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+  }
+}
+
+.indicators {
+  text-align: right;
+}
+.indicators .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  z-index: -1;
+}
+.indicators .dot.active {
+  background-color: #c03842;
+}/*# sourceMappingURL=fv.css.map */

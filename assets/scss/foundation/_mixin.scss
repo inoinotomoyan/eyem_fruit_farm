@@ -1,0 +1,215 @@
+@use "variables" as var;
+
+// ------------------------------------------
+// レスポンシブ表示切り替え用
+// ------------------------------------------
+@mixin devicePC {
+	@media screen and (min-width: (var.$breakPoint + 1)) {
+		@content;
+	}
+}
+@mixin deviceSP {
+	@media screen and (max-width: var.$breakPoint) {
+		@content;
+	}
+}
+
+//function
+@function getVw($size, $viewport:1500) {
+	$rate: 100 / $viewport;
+	@return $rate * $size * 1vw;
+}
+
+
+// ------------------------------------------
+// 単位を削除
+// ------------------------------------------
+@function stripUnit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+// ------------------------------------------
+// hover指定
+// ------------------------------------------
+@mixin hover {
+	@media (hover: hover){
+		&:where(:any-link, :enabled, summary):hover {
+			@content;
+		}
+	}
+	
+	//※SP、タブレットでhoverが不要の場合はコメントアウト
+	@media (hover: none){
+		&:where(:any-link, :enabled, summary):active {
+			@content;
+		}
+	}
+}
+
+// ------------------------------------------
+// 親要素へのhover指定
+// ------------------------------------------
+@mixin parentHover {
+	@media (hover: hover){
+		&:is(:where(:any-link, :enabled, summary):hover *) {
+			@content;
+		}
+	}
+	
+	//※SP、タブレットでhoverが不要の場合はコメントアウト
+	@media (hover: none){
+		&:is(:where(:any-link, :enabled, summary):active *) {
+			@content;
+		}
+	}
+}
+
+
+// ------------------------------------------
+// 文字サイズレスポンシブ
+// ------------------------------------------
+/*引数：初期値はすべて_variables.scssで設定
+$pcsize：PCデザイン文字サイズ
+$pcspacing：PCデザイン文字間
+$spsize：SPデザイン文字サイズ
+$spspacing：SPデザイン文字間
+$pccontainer：PCデザインコンテンツ幅
+$spcontainer：SPデザインコンテンツ幅
+*/
+@mixin fontLiquid($pcsize: var.$pcFont, $pcspacing: var.$pcSpacing, $spsize: var.$spFont, $spspacing: var.$spSpacing, $pccontainer: var.$pcCanvas, $spcontainer: var.$spCanvas) {
+	$pccontainer: stripUnit($pccontainer);
+	$pcsize: stripUnit($pcsize);
+	font-size: min( calc($pcsize / $pccontainer) * 100vw, $pcsize * 1px );
+	@if (unit($pcspacing) == 'px') {
+		$pcspacing: stripUnit($pcspacing);
+		line-height: calc($pcspacing / $pcsize);
+	} @else {
+		@warn $pcspacing;
+		line-height: $pcspacing;
+	}
+	@include deviceSP() {
+		$spcontainer: stripUnit($spcontainer);
+		$spsize: stripUnit($spsize);
+		font-size: calc($spsize / $spcontainer) * 100vw;
+		@if (unit($spspacing) == 'px') {
+			$spspacing: stripUnit($spspacing);
+			line-height: calc($spspacing / $spsize);
+		} @else {
+			line-height: $spspacing;
+			@warn $spspacing;
+		}
+	}
+}
+
+
+// ------------------------------------------
+// 汎用レスポンシブ
+// ------------------------------------------
+/*引数
+$property：cssのプロパティ
+$pcsize：PCデザインpx
+$spsize：SPデザインpx
+$pccontainer：PCデザインコンテンツ幅：初期値は_variables.scssで設定
+$spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで設定
+*/
+@mixin liquid($property, $pcsize, $spsize, $pccontainer: var.$pcCanvas, $spcontainer: var.$spCanvas) {
+	$pccontainer: stripUnit($pccontainer);
+	$pcsize: stripUnit($pcsize);
+	#{$property}: min( calc($pcsize / $pccontainer) * 100vw, $pcsize * 1px );
+	@include deviceSP() {
+		$spcontainer: stripUnit($spcontainer);
+		$spsize: stripUnit($spsize);
+		#{$property}: min( calc($spsize / $spcontainer) * 100vw, 100vh );
+	}
+}
+
+
+// ------------------------------------------
+// ■アスペクト比
+// ------------------------------------------
+/*引数
+$vertical：横比率
+$horizontal：縦比率
+*/
+@mixin aspect($vertical: 1, $horizontal : 1){
+	display: block;
+	aspect-ratio: $vertical / $horizontal;
+	overflow: hidden;
+	& :where(img, video, iframe) {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		transition: transform .5s;
+	}
+}
+
+// ------------------------------------------
+// ■格子状のレイアウト
+// ------------------------------------------
+/*引数
+$col：PCカラム数
+$margin_h：PC横マージンpx
+$margin_v：PC縦マージンpx
+$spcol：SPカラム数
+$spmargin_h：SP横マージンpx
+$spmargin_v：SP縦マージンpx
+$pccontainer：PCデザインコンテンツ幅：初期値は_variables.scssで設定
+$spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで設定
+*/
+@mixin grid($col: 3, $margin_h: 30px, $margin_v: 40px, $spcol: 1, $spmargin_h: 0, $spmargin_v: 20px, $pccontainer: var.$pcContainer, $spcontainer: var.$spContainer) {
+	$pccontainer: stripUnit($pccontainer);
+	$margin_h: stripUnit($margin_h);
+	$margin_v: stripUnit($margin_v);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	flex-wrap: wrap;
+	display: grid;
+	gap: min( calc($margin_v / $pccontainer) * 100vw, $margin_v * 1px ) min( calc($margin_h / $pccontainer) * 100vw, $margin_h * 1px );
+	grid-template-columns: repeat($col, 1fr);
+	@include deviceSP {
+		$spcontainer: stripUnit($spcontainer);
+		$spmargin_h: stripUnit($spmargin_h);
+		$spmargin_v: stripUnit($spmargin_v);
+		gap: min( calc($spmargin_v / $spcontainer) * 100vw, $spmargin_v * 1px ) min( calc($spmargin_h / $spcontainer) * 100vw, $spmargin_h * 1px );
+		grid-template-columns: repeat($spcol, 1fr);
+	}
+}
+
+// ------------------------------------------
+// 親要素に対して中央寄せ
+// ------------------------------------------
+@mixin centered {
+	display: grid;
+	place-items: center;
+}
+
+
+// ------------------------------------------
+// 長文をn行で省略+「…」を表示
+// ------------------------------------------
+@mixin lineClamp($line: 3){
+	@if $line == 1 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	} @else {
+		display: -webkit-box;
+		-webkit-line-clamp: $line;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+}
+
+// ------------------------------------------
+// ウィンドウ幅のブロック
+// ------------------------------------------
+@mixin full-width(){
+	margin-left: calc((100vw - 100%) / -2);
+	margin-right: calc((100vw - 100%) / -2);
+	max-width: auto; // IE対策
+	max-width: initial;
+}

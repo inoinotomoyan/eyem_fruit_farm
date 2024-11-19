@@ -1,0 +1,43 @@
+@use "mixin" as mixin;
+@use "variables" as var;
+
+html {
+	@include mixin.fontLiquid();	//PC:16px SP:16px
+}
+
+body {
+	font-family: var.$font-family-noto;	//Noto
+	overflow-x: hidden;
+	position: relative;
+}
+
+img {
+	image-rendering: -webkit-optimize-contrast;
+}
+
+/* hover
+--------------------------------------------------*/
+a {
+	@include mixin.hover {
+		text-decoration: none;
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+/* コンテナ
+--------------------------------------------------*/
+.f-container {
+	margin-inline: auto;	//左右中央
+	width: min(100%, calc(var.$pcContainer) + 100% * (1 - (var.$pcContainer / var.$pcCanvas)));
+	padding-left: 100% * ((1 - (var.$pcContainer / var.$pcCanvas)) / 2);
+	padding-right: 100% * ((1 - (var.$pcContainer / var.$pcCanvas)) / 2);
+
+	@include mixin.deviceSP() {
+		width: (var.$spContainer / var.$spCanvas) * 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

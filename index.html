@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"
+  >
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://" />
+    <meta property="og:image" content="https://" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="" />
+
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Sawarabi+Mincho&display=swap"
+    />
+    <link rel="stylesheet" href="assets/scss/styles.css" />
+
+    <script src="carousel.js"></script>
+    <script src="tab_ctrl.js" defer></script>
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="l-header__inner">
+        <div class="l-header__logo">
+          <img
+            src="assets/img/_sample/logo.jpg"
+            alt="ロゴ画像"
+            width="198px"
+            height="51.86px"
+          />
+        </div>
+        <nav class="l-header__nav">
+          <ul class="l-header__list">
+            <li class="l-header__item">
+              <a class="l-header__link common-small-text" href="#"
+                >あいむ果樹園について</a
+              >
+            </li>
+
+            <li class="l-header__item">
+              <a class="l-header__link" href="#">お知らせ</a>
+            </li>
+
+            <li class="l-header__item">
+              <a class="l-header__link" href="#">生産者紹介</a>
+            </li>
+            <li class="l-header__item">
+              <a class="l-header__link" href="#">美味しさの秘密</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="p-fv">
+        <div class="p-fv__innerwrap">
+          <div class="carousel">
+            <div class="slides">
+              <div class="slide"></div>
+              <div class="slide"></div>
+              <div class="slide"></div>
+              <div class="slide"></div>
+            </div>
+          </div>
+          <div class="indicators">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-sv">
+        <div class="p-sv__innerwrap">
+          <div class="p-sv__textarea">
+            <h3 class="p-sv__textarea__title overallcolor">
+              <span class="p-sv_textarea__title highlight">フルーツ</span
+              >にもっと<br /><span class="p-sv_textarea__title highlight">
+                ワクワク</span
+              >を
+            </h3>
+            <p class="p-sv__desc c-desc">
+              交響楽はかっこうの身動きなんどみちを首尾に云い楽長ますた。<br />
+              <br />
+              またこれから愉快ましたという野鼠たます。同じたたのたもましするとゴーシュの正確めのなかをはどんと粗末ならうが、それまでかっこうを倒れるられことでしまし。云いすぎ何も扉をはげしくたて前のホールの町汁を出し第十鳥弾のかっかをあるてときたた。ほんとうもいまかまえからくださいで。
+            </p>
+          </div>
+
+          <div class="p-sv__imgbox">
+            <div class="beige"></div>
+            <div class="red-circle"></div>
+            <div class="dots"></div>
+            <div class="apples"></div>
+            <div class="oranges"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-producer">
+        <div class="p-producer__innerwrap">
+          <div class="p-producer_title">
+            <h2 class="c-sectiontitle maintitle-white">people</h2>
+            <h8 class="c-sectiontitle__sub common-small-text whiteapple"
+              >生産者紹介</h8
+            >
+          </div>
+
+          <div class="p-producer__tabctrl__innerwrap">
+            <ul class="p-producer_tabs">
+              <li><a href="" class="active">りんごチーム</a></li>
+              <li><a href="">ぶどうチーム</a></li>
+              <li><a href="">みかんチーム</a></li>
+            </ul>
+
+            <div class="p-producer__contents">
+              <li class="active">
+                <div class="p-producer__contents__innerwrap">
+                  <div class="c-firstperson">
+                    <figure class="p-producer__contents__imgbox">
+                      <img
+                        src="assets/img/_sample/Firefly 麦わら帽子を被ったりんご農家の日本人男性、50代 2523 1.jpg"
+                        alt="麦わら帽子を被ったりんご農家の日本人男性"
+                        width="300px"
+                        height="300px"
+                        style="border-radius: 30px"
+                      />
+                    </figure>
+                    <div class="p-producer__profile">
+                      <h4 class="p-producer__profile__name">林檎 一郎</h4>
+                      <div class="p-producer__profile__innerwrap">
+                        <img
+                          class="dottedline"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                          width="300px"
+                          height="2px"
+                        />
+
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">趣味</p>
+                          <p class="c-ans">サイクリング</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">特技</p>
+                          <p class="c-ans">利きりんご</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">一言</p>
+                          <p class="c-ans">甘さはどこにも負けません！</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-person__aftersecond">
+                    <figure class="p-producer__contents__imgbox">
+                      <img
+                        src="assets/img/_sample/Firefly りんご農家の日本人女性、40代 2523 1.jpg"
+                        alt="りんご農家の日本人女性"
+                        width="300px"
+                        height="300px"
+                        style="border-radius: 30px"
+                      />
+                    </figure>
+                    <div class="p-producer__profile">
+                      <h4 class="p-producer__profile__name">林檎 美味</h4>
+                      <div class="p-producer__profile__innerwrap">
+                        <img
+                          class="dottedline"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                          width="300px"
+                          height="2px"
+                        />
+
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">趣味</p>
+                          <p class="c-ans">ガーデニング</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">特技</p>
+                          <p class="c-ans">りんご料理</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">一言</p>
+                          <p class="c-ans">一番美味しいりんごを届けます</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="c-person__aftersecond">
+                    <figure class="p-producer__contents__imgbox">
+                      <img
+                        src="assets/img/_sample/Firefly りんご農家の収穫を行なっている女性、ブロンド、西洋 82879 1.jpg"
+                        alt="麦わら帽子を被ったりんご農家の日本人男性"
+                        width="300px"
+                        height="300px"
+                        style="border-radius: 30px"
+                      />
+                    </figure>
+                    <div class="p-producer__profile">
+                      <h4 class="p-producer__profile__name">アップル レッド</h4>
+                      <div class="p-producer__profile__innerwrap">
+                        <img
+                          class="dottedline"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                          width="300px"
+                          height="2px"
+                        />
+
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">趣味</p>
+                          <p class="c-ans">テニス</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">特技</p>
+                          <p class="c-ans">高速りんご皮剥き</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                        <div class="p-producer__details__innerwrap">
+                          <p class="c-subject">一言</p>
+                          <p class="c-ans">Very delicious apple!!</p>
+                        </div>
+                        <img
+                          class="dottedline__aftersecond"
+                          src="assets/img/_sample/Vector 41.jpg"
+                          alt="点線"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="tab_contents">コンテンツ2</li>
+              <li class="tab_contents">コンテンツ3</li>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="p-feature">
+        <div class="p-feature__innerwrap">
+          <h2 class="p-feature__title c-sectiontitle maintitle-brown">
+            features
+          </h2>
+          <div class="p-feature__subtitle__innerwrap">
+            <h5
+              class="c-sectiontitle__sub subtitle-brown common-small-text redapple"
+            >
+              あいむ果樹園のおいしさの秘密
+            </h5>
+          </div>
+
+          <div class="p-feature__area">
+            <div>
+              <figure class="p-feature__area__imgbox">
+                <img
+                  src="assets/img/_sample/overview.jpg"
+                  alt="果樹園の全体風景"
+                  width="472px"
+                  height="322px"
+                />
+              </figure>
+            </div>
+
+            <div class="p-feature__textarea">
+              <div class="p-feature__textarea__title__innerwrap">
+                <h3 class="number">01</h3>
+                <h3 class="c-featuretitle">なにかとてつもなくすごいこと</h3>
+              </div>
+
+              <p class="p-feature__textarea__desc c-desc">
+                またこれから愉快ましたという野鼠たます。同じたたのたもましするとゴーシュの正確めのなかをはどんと粗末ならうが、それまでかっこうを倒れるられことでしまし。云いすぎ何も扉をはげしくたて前のホールの町汁を出し第十鳥弾のかっかをあるてときたた。ほんとうもいまかまえからくださいで。
+              </p>
+            </div>
+          </div>
+
+          <div class="p-feature__area">
+            <div class="photo-right-aligned">
+              <figure class="p-feature__area__imgbox">
+                <img
+                  src="assets/img/_sample/soil.jpg"
+                  alt="果樹園の土壌"
+                  width="472px"
+                  height="322px"
+                />
+              </figure>
+            </div>
+
+            <div class="p-feature__textarea__left-aligned">
+              <div class="p-feature__textarea__title__innerwrap">
+                <h3 class="number">02</h3>
+                <h3 class="c-featuretitle">とてつもなく驚くべきこと</h3>
+              </div>
+
+              <p class="p-feature__textarea__desc c-desc">
+                またこれから愉快ましたという野鼠たます。同じたたのたもましするとゴーシュの正確めのなかをはどんと粗末ならうが、それまでかっこうを倒れるられことでしまし。云いすぎ何も扉をはげしくたて前のホールの町汁を出し第十鳥弾のかっかをあるてときたた。ほんとうもいまかまえからくださいで。
+              </p>
+            </div>
+          </div>
+          <div class="p-feature__area">
+            <div>
+              <figure class="p-feature__area__imgbox">
+                <img
+                  src="assets/img/_sample/orange.jpg"
+                  alt="収穫後のみかんの画像"
+                  width="472px"
+                  height="322px"
+                />
+              </figure>
+            </div>
+
+            <div class="p-feature__textarea">
+              <div class="p-feature__textarea__title__innerwrap">
+                <h3 class="number">03</h3>
+                <h3 class="c-featuretitle">なにかすごく画期的なこと</h3>
+              </div>
+
+              <p class="p-feature__textarea__desc c-desc">
+                またこれから愉快ましたという野鼠たます。同じたたのたもましするとゴーシュの正確めのなかをはどんと粗末ならうが、それまでかっこうを倒れるられことでしまし。云いすぎ何も扉をはげしくたて前のホールの町汁を出し第十鳥弾のかっかをあるてときたた。ほんとうもいまかまえからくださいで。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="l-footer">
+      <small class="l-footer__copyright"
+        >©2023,eyem fruit farm,All Rights Reserved</small
+      >
+    </footer>
+  </body>
+</html>

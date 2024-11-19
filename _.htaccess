@@ -1,0 +1,39 @@
+# 使用時はリネーム
+# _.htaccess → .htaccess
+
+# ベーシック認証
+# AuthUserFile /var/www/html/xxxxxxx/.htpasswd
+# AuthGroupFile /dev/null
+# AuthName "Site Password"
+# AuthType Basic
+# require valid-user
+# <Files ~ "^.(htpasswd|htaccess)$">
+# deny from all
+# </Files>
+
+# 301リダイレクト
+# Redirect 301 /●●●.html https://www.■■■.jp/□□□/
+
+# URL正規化
+# httpsでwwwなし
+# <IfModule mod_rewrite.c>
+# RewriteEngine on
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# RewriteCond %{HTTPS} !on
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
+# httpsでwwwあり
+# <IfModule mod_rewrite.c>
+# RewriteEngine on
+# RewriteCond %{HTTPS} off
+# RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# MWサーバ用PHP モジュール版→CGI版
+# <FilesMatch \.php$>
+# SetHandler php72-cgi
+# </FilesMatch>
+# Action php72-cgi /cgi-admin/”ユーザー名”/php72

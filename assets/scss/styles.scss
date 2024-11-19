@@ -1,0 +1,49 @@
+@use "object/component";
+@use "layout/footer";
+@use "layout/header";
+@use "object/project/fv";
+@use "object/project/producerprofile";
+@use "object/project/feature";
+@use "object/project/sv";
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0 0 0 0;
+}
+h2 {
+  font-family: "Josefin Sans", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+// ==========================================================================
+// Foundation
+// Reset.cssやNormalize.cssなどのリセット系CSS及び、要素セレクタの基本スタイルを定義します。
+// ==========================================================================
+// @use "foundation/sanitize";
+// @use "foundation/base";
+
+// ==========================================================================
+// Layout
+// ヘッダー、フッター、サイドバー、メインエリアのように、サイトで共通したコンテナーを定義します。
+// ==========================================================================
+// @use "layout/header";
+// @use "layout/footer";
+
+// ==========================================================================
+// Object
+// Webサイトの中で用いられるすべてのビジュアルパターンを総称して定義します。
+// -----------------------------------------------------------------
+// Component
+// ページを最低限の機能単位で分割したモジュールのスタイルを定義します。
+// Project
+// プロジェクト固有のパターンを定義する。Componentとそれに該当しないものによって構成されるもの
+// Utility
+// ComponentとProjectレイヤーのObjectのモディファイアで解決することが難しい・適切では無い、
+// わずかなスタイルの調整のための便利クラスなどを定義します。
+// ==========================================================================
+// @use "object/component";
+// @use "object/utility";
+// @use "object/project/home";
+// @use "object/project/sample";

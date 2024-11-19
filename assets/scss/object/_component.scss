@@ -1,0 +1,142 @@
+@use "../foundation/mixin" as mixin;
+@use "../foundation/variables" as var;
+
+// Newsセクション、生産者紹介セクション、featureセクションのメインタイトルとサブタイトルの構造定義
+.c-sectiontitle {
+  font-size: 103px;
+  line-height: 0.65;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: bold;
+}
+.c-sectiontitle__sub {
+  font-size: 16px;
+  line-height: 3.25;
+}
+
+// Newsセクション、生産者紹介セクション、featureセクションのメインタイトルとサブタイトルの文字色の定義
+.maintitle-white {
+  color: #ffffff;
+}
+.maintitle-brown {
+  color: #514327;
+}
+.subtitle-brown {
+  color: #514327;
+}
+
+// 生産者のプロフィール部分の2人目以降の左側の余白
+.c-person__aftersecond {
+  margin-left: 50px;
+}
+
+// 生産者プロフィールの質問事項とそれに対する答え
+.c-subject {
+  margin: 0 0 0 0;
+  color: #514327;
+  font-size: 16px;
+  line-height: 2;
+}
+.c-ans {
+  margin: 0 0 0 31px;
+  color: #514327;
+  font-size: 16px;
+  line-height: 2;
+}
+
+// 小さい文字の左端に小さい赤いリンゴが配置されている共通部分(ヘッダー部分以外)
+
+.common-small-text {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 52px;
+  padding: 0 0 0 18px;
+  font-weight: normal;
+}
+
+// 赤いリンゴと白いリンゴの色分け部分
+.redapple {
+  background: url(../img/_sample/small_apple.jpg) no-repeat left center;
+  color: #514327;
+  margin-top: 0px;
+}
+.whiteapple {
+  background: url(../img/_sample/small_white_apple.png) no-repeat left center;
+  color: #ffffff;
+  margin-top: 9px;
+}
+
+// featureセクション内の各セクションの番号の定義
+
+.number {
+  color: #c03842;
+  font-size: 90px;
+  line-height: 0.74;
+  font-weight: bold;
+  margin-right: 30px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+// featureセクション内の各セクションのタイトルの定義
+.c-featuretitle {
+  color: #514327;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.07;
+  margin: 28px 0 0 0;
+}
+// svセクションとfeatureセクション内の各セクションの説明文の定義
+.c-desc {
+  color: #514327;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 30px;
+  margin-top: 60px;
+}
+
+// チェックボックス、ラジオボタン
+// .c-inputCheckbox,
+// .c-inputRadio {
+// 	&__input {
+// 		display: none;
+// 	}
+// 	&__mark {
+// 		position: relative;
+// 		padding: 0 0 0 30px;
+
+// 		&::before {
+// 			content: "";
+// 			position: absolute;
+// 			top: 0;
+// 			left: 0;
+// 			border: 1px solid #ccc;
+// 			width: 20px;
+// 			height: 20px;
+// 		}
+// 		&::after {
+// 			position: absolute;
+// 			top: 5px;
+// 			left: 5px;
+// 			background: #0000ff;
+// 			width: 10px;
+// 			height: 10px;
+// 		}
+// 	}
+// }
+// .c-inputRadio {
+// 	&__mark {
+// 		&::before,
+// 		&::after {
+// 			border-radius: 50%;
+// 		}
+// 	}
+// }
+// :checked {
+// 	+ .c-inputCheckbox,
+// 	+ .c-inputRadio {
+// 		&__mark::after {
+// 			content: "";
+// 		}
+// 	}
+// }

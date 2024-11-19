@@ -1,0 +1,13 @@
+@use "../foundation/mixin" as mixin;
+@use "../foundation/variables" as var;
+
+.l-footer {
+  background-color: #c03842;
+  padding: 22px 0 19px;
+  text-align: center;
+
+  &__copyright {
+    font-size: 12px;
+    color: #ffffff;
+  }
+}

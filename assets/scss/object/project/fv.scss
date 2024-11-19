@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@use "../../foundation/mixin" as mixin;
+@use "../../foundation/variables" as var;
+
+$screen-1: 670px;
+@mixin screen-1 {
+  @media (max-width: ($screen-1)) {
+    @content;
+  }
+}
+$screen-2: 500px;
+@mixin screen-2 {
+  @media (max-width: ($screen-2)) {
+    @content;
+  }
+}
+
+.p-fv__innerwrap {
+  position: relative;
+  // max-width: 1294px;
+  margin-right: 35px;
+  margin-left: 35px;
+  overflow: hidden;
+}
+
+.carousel .slides {
+  display: flex;
+  justify-content: space-around;
+  transition: transform 0.5s ease-in-out;
+
+  & .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 596px;
+    background-image: url(../img/_sample/fv.jpg);
+    background-size: cover; /* 画像を要素全体にフィットさせる */
+    background-position: center;
+    border-radius: 30px;
+
+    @include screen-1 {
+      background-position: -330px;
+      border-radius: 30px;
+    }
+    @include screen-2 {
+      background-image: url(../img/_sample/fv_sp.jpg);
+      background-position: center;
+      background-size: cover;
+      border-radius: 30px;
+    }
+  }
+}
+
+.indicators {
+  text-align: right;
+  & .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    z-index: -1;
+
+    &.active {
+      background-color: #c03842;
+    }
+  }
+}
