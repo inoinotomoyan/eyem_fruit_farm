@@ -33,7 +33,7 @@ $screen-2: 500px;
     min-width: 100%;
     box-sizing: border-box;
     height: 596px;
-    background-image: url(../img/_sample/fv.jpg);
+    background-image: url(../img/_sample/bg_fv.jpg);
     background-size: cover; /* 画像を要素全体にフィットさせる */
     background-position: center;
     border-radius: 30px;
@@ -43,7 +43,7 @@ $screen-2: 500px;
       border-radius: 30px;
     }
     @include screen-2 {
-      background-image: url(../img/_sample/fv_sp.jpg);
+      background-image: url(../img/_sample/bg_fvsp.jpg);
       background-position: center;
       background-size: cover;
       border-radius: 30px;

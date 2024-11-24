@@ -12,11 +12,11 @@
   }
 }
 
-.p-producer__tabctrl__innerwrap {
+.p-producerTabctrl__innerwrap {
   max-width: 1100px;
   justify-content: center;
 }
-.p-producer_tabs {
+.p-producerTabs {
   display: flex;
   justify-content: center;
   margin-bottom: 0px;
@@ -59,7 +59,7 @@
   }
 }
 
-.p-producer__contents {
+.p-producerContents {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-left: 0px;
@@ -90,7 +90,7 @@
   }
 }
 
-.p-producer__profile {
+.p-producerProfile {
   &__name {
     color: #514327;
     font-size: 20px;
@@ -101,15 +101,18 @@
   }
 }
 
-.dottedline {
+.p-producer__dottedline {
   display: block;
+  margin-top: 9px;
   margin-bottom: 9px;
-  &__aftersecond {
-    margin-top: 9px;
+
+  &.m-first {
+    display: block;
     margin-bottom: 9px;
+    margin-top: 0px;
   }
 }
 
-.p-producer__details__innerwrap {
+.p-producerDetails__innerwrap {
   display: flex;
 }

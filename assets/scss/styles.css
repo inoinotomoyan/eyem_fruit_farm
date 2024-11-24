@@ -28,7 +28,15 @@ $spmargin_v：SP縦マージンpx
 $pccontainer：PCデザインコンテンツ幅：初期値は_variables.scssで設定
 $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで設定
 */
-.c-sectiontitle {
+.m-brown {
+  color: #514327;
+}
+
+.m-white {
+  color: #ffffff;
+}
+
+.c-sectionTitle {
   font-size: 103px;
   line-height: 0.65;
   margin-bottom: 0px;
@@ -36,25 +44,29 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   font-weight: bold;
 }
 
-.c-sectiontitle__sub {
+.c-sectionSubtitle.m-commonsmalltext {
+  display: inline-block;
   font-size: 16px;
   line-height: 3.25;
+  padding: 0 0 0 18px;
+  font-weight: normal;
 }
-
-.maintitle-white {
+.c-sectionSubtitle.m-commonsmalltext.m-whiteapple {
+  background: url(../img/_sample/icon_whiteapple.png) no-repeat left center;
   color: #ffffff;
+  margin-top: 9px;
 }
-
-.maintitle-brown {
+.c-sectionSubtitle.m-commonsmalltext.m-redapple {
+  background: url(../img/_sample/icon_apple.jpg) no-repeat left center;
   color: #514327;
+  margin-top: 0px;
 }
 
-.subtitle-brown {
-  color: #514327;
-}
-
-.c-person__aftersecond {
+.c-person {
   margin-left: 50px;
+}
+.c-person.m-first {
+  margin-left: 0px;
 }
 
 .c-subject {
@@ -71,27 +83,7 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   line-height: 2;
 }
 
-.common-small-text {
-  display: inline-block;
-  font-size: 16px;
-  line-height: 52px;
-  padding: 0 0 0 18px;
-  font-weight: normal;
-}
-
-.redapple {
-  background: url(../img/_sample/small_apple.jpg) no-repeat left center;
-  color: #514327;
-  margin-top: 0px;
-}
-
-.whiteapple {
-  background: url(../img/_sample/small_white_apple.png) no-repeat left center;
-  color: #ffffff;
-  margin-top: 9px;
-}
-
-.number {
+.p-featureNumber {
   color: #c03842;
   font-size: 90px;
   line-height: 0.74;
@@ -102,7 +94,7 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   font-family: "Josefin Sans", sans-serif;
 }
 
-.c-featuretitle {
+.c-featureTitle {
   color: #514327;
   font-size: 30px;
   font-weight: bold;
@@ -156,7 +148,7 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   text-decoration: none;
   line-height: 2;
   padding: 0 0 0 20px;
-  background: url(../img/_sample/small_apple.jpg) no-repeat left center;
+  background: url(../img/_sample/icon_apple.jpg) no-repeat left center;
   display: inline-block;
   color: #514327;
   font-size: 16px;
@@ -178,7 +170,7 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   min-width: 100%;
   box-sizing: border-box;
   height: 596px;
-  background-image: url(../img/_sample/fv.jpg);
+  background-image: url(../img/_sample/bg_fv.jpg);
   background-size: cover; /* 画像を要素全体にフィットさせる */
   background-position: center;
   border-radius: 30px;
@@ -191,7 +183,7 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
 }
 @media (max-width: 500px) {
   .carousel .slides .slide {
-    background-image: url(../img/_sample/fv_sp.jpg);
+    background-image: url(../img/_sample/bg_fvsp.jpg);
     background-position: center;
     background-size: cover;
     border-radius: 30px;
@@ -228,26 +220,26 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   padding-top: 150px;
 }
 
-.p-producer__tabctrl__innerwrap {
+.p-producerTabctrl__innerwrap {
   max-width: 1100px;
   justify-content: center;
 }
 
-.p-producer_tabs {
+.p-producerTabs {
   display: flex;
   justify-content: center;
   margin-bottom: 0px;
   padding-left: 0px;
 }
-.p-producer_tabs li {
+.p-producerTabs li {
   margin-right: 15px;
   list-style: none;
   width: 33.3333333333%;
 }
-.p-producer_tabs li:nth-last-child(1) {
+.p-producerTabs li:nth-last-child(1) {
   margin-right: 0;
 }
-.p-producer_tabs li a {
+.p-producerTabs li a {
   color: #514327;
   font-size: 20px;
   text-decoration: none;
@@ -260,11 +252,11 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
 }
-.p-producer_tabs li a.active {
+.p-producerTabs li a.active {
   background-color: #ffffff;
   padding-top: 5.5px;
 }
-.p-producer_tabs li a:not(.active) {
+.p-producerTabs li a:not(.active) {
   height: 48px;
   transform: translateY(18.5px);
   background-color: transparent;
@@ -272,12 +264,12 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   color: #ffffff;
 }
 
-.p-producer__contents {
+.p-producerContents {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-left: 0px;
 }
-.p-producer__contents li {
+.p-producerContents li {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 54px;
@@ -288,19 +280,19 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   list-style: none;
   display: none;
 }
-.p-producer__contents li.active {
+.p-producerContents li.active {
   display: block;
 }
-.p-producer__contents__innerwrap {
+.p-producerContents__innerwrap {
   display: flex;
 }
-.p-producer__contents__imgbox {
+.p-producerContents__imgbox {
   margin: 0px 0px 0px 0px;
   max-width: 100%;
   height: auto;
 }
 
-.p-producer__profile__name {
+.p-producerProfile__name {
   color: #514327;
   font-size: 20px;
   font-weight: bold;
@@ -309,16 +301,18 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
   margin-bottom: 20px;
 }
 
-.dottedline {
+.p-producer__dottedline {
   display: block;
-  margin-bottom: 9px;
-}
-.dottedline__aftersecond {
   margin-top: 9px;
   margin-bottom: 9px;
 }
+.p-producer__dottedline.m-first {
+  display: block;
+  margin-bottom: 9px;
+  margin-top: 0px;
+}
 
-.p-producer__details__innerwrap {
+.p-producerDetails__innerwrap {
   display: flex;
 }
 
@@ -333,67 +327,166 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
 .p-feature__innerwrap :nth-child(3) {
   margin-top: 43px;
 }
-.p-feature__title {
+.p-feature .c-sectionTitle {
   text-align: center;
   margin: 0 0 0 0;
 }
-.p-feature__subtitle__innerwrap {
+
+.p-featureSubtitle__innerwrap {
   text-align: center;
 }
-.p-feature__area {
+
+.p-featureContents {
   display: flex;
   justify-content: space-between;
   margin-bottom: 90px;
 }
-.p-feature__area__imgbox {
+.p-featureContents__imgbox {
   width: 472px;
   height: 322px;
   margin: 0 0 0 0;
 }
-.p-feature__textarea {
+
+.p-featureTexts {
   margin-left: 63px;
 }
-.p-feature__textarea__left-aligned {
-  margin-right: 63px;
-}
-.p-feature__textarea__title__innerwrap {
+.p-featureTexts__innerwrap {
   display: flex;
   translate: 8px;
 }
+.p-featureTexts.m-left {
+  margin-right: 63px;
+  margin-left: 0px;
+}
 
-.photo-right-aligned {
+.m-rightalignedimg {
   order: 1;
 }
 
-.text-left-aligned {
-  order: 0;
+.p-sv__innerwrap {
+  position: relative;
+  display: flex;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 300px;
+  padding-left: 189px;
+  padding-top: 280px;
+  padding-bottom: 290px;
 }
 
-.p-sv__innerwrap {
-  margin-right: 150px;
-  margin-left: 150px;
-  margin-top: 239px;
-  margin-bottom: 137px;
+.p-svTexts {
+  margin-right: 111px;
 }
-.p-sv__textarea__title {
+
+.p-svTexts__title {
   width: 255px;
   height: 246px;
   margin: 0 0 0 0;
   font-size: 51px;
   line-height: 1.6;
   font-weight: 600;
+  color: #514327;
 }
-.p-sv__desc {
+.p-svTexts__title.highlight {
+  color: #c03842;
+}
+
+.p-svTexts__desc {
   width: 385px;
   height: 288px;
 }
 
-.overallcolor {
+.p-sv__img--sv1 {
+  position: absolute;
+  top: 180px;
+  left: 950px;
+  width: 365px;
+  height: 246px;
+  z-index: 1;
+}
+
+.p-sv__img--sv2 {
+  position: absolute;
+  top: 230px;
+  left: 1000px;
+  width: 213px;
+  height: 254px;
+  z-index: 2;
+}
+
+.p-sv__img--sv3 {
+  position: absolute;
+  top: 275px;
+  left: 1080px;
+  width: 100px;
+  height: 100px;
+  z-index: 3;
+}
+
+.p-sv__img--sv4 {
+  position: absolute;
+  top: 821px;
+  left: 970px;
+  width: 315px;
+  height: 240px;
+  z-index: 4;
+}
+
+.p-sv__img--sv5 {
+  position: absolute;
+  top: 310px;
+  left: 689px;
+  width: 445px;
+  height: 566px;
+  z-index: 5;
+}
+
+.p-news__innerwrap {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 150px;
+  padding-left: 189px;
+}
+
+.p-newsTitle__innerwrap {
+  padding-right: 72px;
+}
+
+.p-newsContents__article {
+  border-top: 1px solid #514327;
+}
+
+.p-newsContents__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.p-newsContents__meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.p-newsContents__time {
+  font-size: 16px;
+  line-height: 2;
+  color: #776f65;
+}
+
+.p-newsContents__tag {
   color: #514327;
 }
 
-.highlight {
-  color: #c03842;
+.p-newsContents__heading {
+  font-size: 16px;
+  line-height: 2;
+  font-weight: 400;
+  color: #514327;
 }
 
 body {

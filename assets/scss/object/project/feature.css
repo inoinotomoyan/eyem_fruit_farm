@@ -9,7 +9,7 @@
 .p-feature__innerwrap :nth-child(3) {
   margin-top: 43px;
 }
-.p-feature__title {
+.p-feature .c-sectiontitle {
   text-align: center;
   margin: 0 0 0 0;
 }

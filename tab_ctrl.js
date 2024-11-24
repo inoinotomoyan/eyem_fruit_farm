@@ -1,5 +1,5 @@
-const tabs = document.querySelectorAll(".p-producer_tabs li a");
-const contents = document.querySelectorAll(".p-producer__contents li");
+const tabs = document.querySelectorAll(".p-producerTabs li a");
+const contents = document.querySelectorAll(".p-producerContents li");
 console.log(tabs);
 
 for (let i = 0; i < tabs.length; i++) {

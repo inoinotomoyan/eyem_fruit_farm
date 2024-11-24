@@ -11,26 +11,26 @@
   padding-top: 150px;
 }
 
-.p-producer__tabctrl__innerwrap {
+.p-producerTabctrl__innerwrap {
   max-width: 1100px;
   justify-content: center;
 }
 
-.p-producer_tabs {
+.p-producerTabs {
   display: flex;
   justify-content: center;
   margin-bottom: 0px;
   padding-left: 0px;
 }
-.p-producer_tabs li {
+.p-producerTabs li {
   margin-right: 15px;
   list-style: none;
   width: 33.3333333333%;
 }
-.p-producer_tabs li:nth-last-child(1) {
+.p-producerTabs li:nth-last-child(1) {
   margin-right: 0;
 }
-.p-producer_tabs li a {
+.p-producerTabs li a {
   color: #514327;
   font-size: 20px;
   text-decoration: none;
@@ -43,11 +43,11 @@
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
 }
-.p-producer_tabs li a.active {
+.p-producerTabs li a.active {
   background-color: #ffffff;
   padding-top: 5.5px;
 }
-.p-producer_tabs li a:not(.active) {
+.p-producerTabs li a:not(.active) {
   height: 48px;
   transform: translateY(18.5px);
   background-color: transparent;
@@ -55,12 +55,12 @@
   color: #ffffff;
 }
 
-.p-producer__contents {
+.p-producerContents {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-left: 0px;
 }
-.p-producer__contents li {
+.p-producerContents li {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 54px;
@@ -71,19 +71,19 @@
   list-style: none;
   display: none;
 }
-.p-producer__contents li.active {
+.p-producerContents li.active {
   display: block;
 }
-.p-producer__contents__innerwrap {
+.p-producerContents__innerwrap {
   display: flex;
 }
-.p-producer__contents__imgbox {
+.p-producerContents__imgbox {
   margin: 0px 0px 0px 0px;
   max-width: 100%;
   height: auto;
 }
 
-.p-producer__profile__name {
+.p-producerProfile__name {
   color: #514327;
   font-size: 20px;
   font-weight: bold;
@@ -92,15 +92,17 @@
   margin-bottom: 20px;
 }
 
-.dottedline {
+.p-producer__dottedline {
   display: block;
-  margin-bottom: 9px;
-}
-.dottedline__aftersecond {
   margin-top: 9px;
   margin-bottom: 9px;
 }
+.p-producer__dottedline.m-first {
+  display: block;
+  margin-bottom: 9px;
+  margin-top: 0px;
+}
 
-.p-producer__details__innerwrap {
+.p-producerDetails__innerwrap {
   display: flex;
 }/*# sourceMappingURL=producerprofile.css.map */

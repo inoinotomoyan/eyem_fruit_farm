@@ -1,33 +1,54 @@
 @use "../foundation/mixin" as mixin;
 @use "../foundation/variables" as var;
 
+// 各セクションのメインタイトルとサブタイトルの色だけの定義
+.m-brown {
+  color: #514327;
+}
+
+.m-white {
+  color: #ffffff;
+}
+
 // Newsセクション、生産者紹介セクション、featureセクションのメインタイトルとサブタイトルの構造定義
-.c-sectiontitle {
+
+// メインタイトル
+.c-sectionTitle {
   font-size: 103px;
   line-height: 0.65;
   margin-bottom: 0px;
   margin-top: 0px;
   font-weight: bold;
 }
-.c-sectiontitle__sub {
-  font-size: 16px;
-  line-height: 3.25;
+
+// サブタイトル
+.c-sectionSubtitle {
+  &.m-commonsmalltext {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 3.25;
+    padding: 0 0 0 18px;
+    font-weight: normal;
+    &.m-whiteapple {
+      background: url(../img/_sample/icon_whiteapple.png) no-repeat left center;
+      color: #ffffff;
+      margin-top: 9px;
+    }
+    &.m-redapple {
+      background: url(../img/_sample/icon_apple.jpg) no-repeat left center;
+      color: #514327;
+      margin-top: 0px;
+    }
+  }
 }
 
-// Newsセクション、生産者紹介セクション、featureセクションのメインタイトルとサブタイトルの文字色の定義
-.maintitle-white {
-  color: #ffffff;
-}
-.maintitle-brown {
-  color: #514327;
-}
-.subtitle-brown {
-  color: #514327;
-}
+// 生産者のプロフィール部分の1人目と2人目以降の左側の余白
 
-// 生産者のプロフィール部分の2人目以降の左側の余白
-.c-person__aftersecond {
+.c-person {
   margin-left: 50px;
+  &.m-first {
+    margin-left: 0px;
+  }
 }
 
 // 生産者プロフィールの質問事項とそれに対する答え
@@ -44,31 +65,9 @@
   line-height: 2;
 }
 
-// 小さい文字の左端に小さい赤いリンゴが配置されている共通部分(ヘッダー部分以外)
-
-.common-small-text {
-  display: inline-block;
-  font-size: 16px;
-  line-height: 52px;
-  padding: 0 0 0 18px;
-  font-weight: normal;
-}
-
-// 赤いリンゴと白いリンゴの色分け部分
-.redapple {
-  background: url(../img/_sample/small_apple.jpg) no-repeat left center;
-  color: #514327;
-  margin-top: 0px;
-}
-.whiteapple {
-  background: url(../img/_sample/small_white_apple.png) no-repeat left center;
-  color: #ffffff;
-  margin-top: 9px;
-}
-
 // featureセクション内の各セクションの番号の定義
 
-.number {
+.p-featureNumber {
   color: #c03842;
   font-size: 90px;
   line-height: 0.74;
@@ -79,7 +78,7 @@
   font-family: "Josefin Sans", sans-serif;
 }
 // featureセクション内の各セクションのタイトルの定義
-.c-featuretitle {
+.c-featureTitle {
   color: #514327;
   font-size: 30px;
   font-weight: bold;
