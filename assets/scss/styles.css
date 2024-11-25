@@ -458,18 +458,33 @@ $spcontainer：SPデザインコンテンツ幅：初期値は_variables.scssで
 .p-newsContents__article {
   border-top: 1px solid #514327;
 }
+.p-newsContents__article:nth-child(2) {
+  border-bottom: 1px solid #514327;
+}
+.p-newsContents__article:nth-child(3) {
+  border-bottom: 1px solid #514327;
+  border-top: none;
+}
 
 .p-newsContents__link {
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.p-newsContents__link.m-link {
+  padding-bottom: 0px;
 }
 
 .p-newsContents__meta {
   display: flex;
   gap: 24px;
   align-items: center;
+}
+.p-newsContents__meta.m-meta {
+  padding-bottom: 30px;
 }
 
 .p-newsContents__time {
