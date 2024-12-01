@@ -54,15 +54,24 @@
   color: #ffffff;
   background-color: #c03842;
   border-radius: 50px;
+  border: 2px #c03842 solid;
   padding: 14px 30px 14px 69px;
   text-align: center;
   margin-top: 78px;
+  &:hover {
+    color: #c03842;
+    background-color: #ffffff;
+    border-color: #c03842;
+  }
 }
 
 // 生産者のプロフィール部分の1人目と2人目以降の左側の余白
 
 .c-person {
   margin-left: 50px;
+  @include mixin.deviceSP {
+    margin-left: 0px;
+  }
   &.m-first {
     margin-left: 0px;
   }
