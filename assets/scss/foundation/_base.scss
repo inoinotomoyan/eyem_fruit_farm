@@ -2,42 +2,56 @@
 @use "variables" as var;
 
 html {
-	@include mixin.fontLiquid();	//PC:16px SP:16px
+  @include mixin.fontLiquid(); //PC:16px SP:16px
 }
 
 body {
-	font-family: var.$font-family-noto;	//Noto
-	overflow-x: hidden;
-	position: relative;
+  font-family: var.$font-family-noto; //Noto
+  overflow-x: hidden;
+  position: relative;
 }
 
 img {
-	image-rendering: -webkit-optimize-contrast;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* hover
 --------------------------------------------------*/
 a {
-	@include mixin.hover {
-		text-decoration: none;
-	}
+  @include mixin.hover {
+    text-decoration: none;
+  }
 }
 
 label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /* コンテナ
 --------------------------------------------------*/
 .f-container {
-	margin-inline: auto;	//左右中央
-	width: min(100%, calc(var.$pcContainer) + 100% * (1 - (var.$pcContainer / var.$pcCanvas)));
-	padding-left: 100% * ((1 - (var.$pcContainer / var.$pcCanvas)) / 2);
-	padding-right: 100% * ((1 - (var.$pcContainer / var.$pcCanvas)) / 2);
+  margin-inline: auto; //左右中央
+  width: min(
+    100%,
+    calc(var.$pcContainer) + 100% * (1 - (var.$pcContainer / var.$pcCanvas))
+  );
+  padding-left: 100% * ((1 - (var.$pcContainer / var.$pcCanvas)) / 2);
+  padding-right: 100% * ((1 - (var.$pcContainer / var.$pcCanvas)) / 2);
 
-	@include mixin.deviceSP() {
-		width: (var.$spContainer / var.$spCanvas) * 100%;
-		padding-left: 0;
-		padding-right: 0;
-	}
+  @include mixin.deviceSP() {
+    width: (var.$spContainer / var.$spCanvas) * 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+* {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.9s ease-out;
+}
+
+*.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
